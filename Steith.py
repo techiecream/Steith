@@ -48,4 +48,18 @@ def CheckNewEmails():
 
     except Exception, e:
         print str(e)
+def SendNewEmail():
+    try:
+        t=raw_input('Recievers Email:')
+        tb=raw_input('Email Content:')
+        mail = smtplib.SMTP('smtp.gmail.com', 587)
+        mail.ehlo()
+        mail.starttls()
+        mail.login('jamiecmacleod@gmail.com','tdxqiydpihfmoekzb')
+        mail.sendmail('jamiecmacleod@gmail.com', t, tb)
+        mail.close()
+        print 'Email has been sent successfuly. You can check your inbox.'
+    except Exception, e:
+        print str(e)
 CheckNewEmails()
+SendNewEmail()
