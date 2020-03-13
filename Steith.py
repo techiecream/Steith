@@ -24,6 +24,7 @@ import email
 #Download files
 #Recommend movies, songs or articles
 #Send bulk SMS
+#File Encryption
 def CheckNewEmails():
     try:
         mail = imaplib.IMAP4_SSL('imap.gmail.com','993')
